@@ -2,18 +2,14 @@
 
 function get_price($name)
 {
-       $servername = "tcp:localhost01.database.windows.net,1433";
-	$username = "pilakag1";
-	$password = "Pilakag_1";
-	$dbname = "pilakag1_db";
-
-       
-        $conn = new mysqli($servername, $username, $password, $dbname);
-        
-        if ($conn->connect_error) 
-	{
-            die("Connection failed: " .$conn->connect_error);
-       	}
+      try {
+    $conn = new PDO("sqlsrv:server = tcp:localhost01.database.windows.net,1433; Database = pilakag1_db", "pilakag1", "Pilakag_1");
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+}
+catch (PDOException $e) {
+    print("Error connecting to SQL Server.");
+    die(print_r($e));
+}
 
        $sql = "SELECT price FROM product WHERE product = '$name'";
 
@@ -37,19 +33,14 @@ else {
 
 function get_avail($name)
 {
-      $servername = "tcp:localhost01.database.windows.net,1433";
-	$username = "pilakag1";
-	$password = "Pilakag_1";
-	$dbname = "pilakag1_db";
-
-       
-        $conn = new mysqli($servername, $username, $password, $dbname);
-        
-        if ($conn->connect_error) 
-	{
-            die("Connection failed: " .$conn->connect_error);
-       	}
-
+  try {
+    $conn = new PDO("sqlsrv:server = tcp:localhost01.database.windows.net,1433; Database = pilakag1_db", "pilakag1", "Pilakag_1");
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+}
+catch (PDOException $e) {
+    print("Error connecting to SQL Server.");
+    die(print_r($e));
+}
      	$sql1 = "SELECT avail FROM product WHERE product = '$name'";
 
        	$result1 = $conn->query($sql1);
@@ -71,19 +62,14 @@ else {
 
 function get_delv($name)
 {
-       $servername = "tcp:localhost01.database.windows.net,1433";
-	$username = "pilakag1";
-	$password = "Pilakag_1";
-	$dbname = "pilakag1_db";
-
-       
-        $conn = new mysqli($servername, $username, $password, $dbname);
-        
-        if ($conn->connect_error) 
-	{
-            die("Connection failed: " .$conn->connect_error);
-       	}
-
+      try {
+    $conn = new PDO("sqlsrv:server = tcp:localhost01.database.windows.net,1433; Database = pilakag1_db", "pilakag1", "Pilakag_1");
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+}
+catch (PDOException $e) {
+    print("Error connecting to SQL Server.");
+    die(print_r($e));
+}
      	$sql1 = "SELECT delv FROM product WHERE product = '$name'";
 
        	$result3 = $conn->query($sql1);
@@ -105,20 +91,15 @@ else {
 
 function get_dema($name)
 {
-        
-	$servername = "tcp:localhost01.database.windows.net,1433";
-	$username = "pilakag1";
-	$password = "Pilakag_1";
-	$dbname = "pilakag1_db";
-
-       
-        $conn = new mysqli($servername, $username, $password, $dbname);
-        
-        if ($conn->connect_error) 
-	{
-            die("Connection failed: " .$conn->connect_error);
-       	}
-
+        try {
+    $conn = new PDO("sqlsrv:server = tcp:localhost01.database.windows.net,1433; Database = pilakag1_db", "pilakag1", "Pilakag_1");
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+}
+catch (PDOException $e) {
+    print("Error connecting to SQL Server.");
+    die(print_r($e));
+}
+	
      	$sql1 = "SELECT demand FROM product WHERE product = '$name'";
 
        	$result4 = $conn->query($sql1);
