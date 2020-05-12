@@ -25,7 +25,7 @@ if(!empty($_GET['name']))
 }
 else
 {
-	response(400,"Invalid Requestt",NULL,NULL,NULL,NULL);
+	response(400,"Invalid Request",NULL,NULL,NULL,NULL);
 }
 
 function response($status,$status_message,$data1,$data2,$data3,$data4)
