@@ -1,26 +1,9 @@
 <?php
+include 'db_conn.php'
 
 function get_price($name)
 {
-        try {
-    $conn = new PDO("sqlsrv:server = tcp:localhost01.database.windows.net,1433; Database = pilakag1_db", "pilakag1", "Pilakag_1");
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-}
-catch (PDOException $e) {
-    print("Error connecting to SQL Server.");
-    die(print_r($e));
-}
-
-// SQL Server Extension Sample Code:
-$connectionInfo = array("UID" => "pilakag1", "pwd" => "Pilakag_1", "Database" => "pilakag1_db", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
-$serverName = "tcp:localhost01.database.windows.net,1433";
-$conn = sqlsrv_connect($serverName, $connectionInfo);
-	
-	if ($conn->connect_error) 
-	{
-            die("Connection failed: " .$conn->connect_error);
-       	}
-
+        
        $sql = "SELECT price FROM product WHERE product = '$name'";
 
        $result = $conn->query($sql);
@@ -44,23 +27,6 @@ else {
 function get_avail($name)
 {
   
-    try {
-    $conn = new PDO("sqlsrv:server = tcp:localhost01.database.windows.net,1433; Database = pilakag1_db", "pilakag1", "Pilakag_1");
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-}
-catch (PDOException $e) {
-    print("Error connecting to SQL Server.");
-    die(print_r($e));
-}
-
-// SQL Server Extension Sample Code:
-$connectionInfo = array("UID" => "pilakag1", "pwd" => "Pilakag_1", "Database" => "pilakag1_db", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
-$serverName = "tcp:localhost01.database.windows.net,1433";
-$conn = sqlsrv_connect($serverName, $connectionInfo);
-	if ($conn->connect_error) 
-	{
-            die("Connection failed: " .$conn->connect_error);
-       	}
 
      	$sql1 = "SELECT avail FROM product WHERE product = '$name'";
 
@@ -84,23 +50,6 @@ else {
 function get_delv($name)
 {
     
-    try {
-    $conn = new PDO("sqlsrv:server = tcp:localhost01.database.windows.net,1433; Database = pilakag1_db", "pilakag1", "Pilakag_1");
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-}
-catch (PDOException $e) {
-    print("Error connecting to SQL Server.");
-    die(print_r($e));
-}
-
-// SQL Server Extension Sample Code:
-$connectionInfo = array("UID" => "pilakag1", "pwd" => "Pilakag_1", "Database" => "pilakag1_db", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
-$serverName = "tcp:localhost01.database.windows.net,1433";
-$conn = sqlsrv_connect($serverName, $connectionInfo);
-	if ($conn->connect_error) 
-	{
-            die("Connection failed: " .$conn->connect_error);
-       	}
 
      	$sql1 = "SELECT delv FROM product WHERE product = '$name'";
 
@@ -123,25 +72,7 @@ else {
 
 function get_dema($name)
 {
-   try {
-    $conn = new PDO("sqlsrv:server = tcp:localhost01.database.windows.net,1433; Database = pilakag1_db", "pilakag1", "Pilakag_1");
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-}
-catch (PDOException $e) {
-    print("Error connecting to SQL Server.");
-    die(print_r($e));
-}
-
-// SQL Server Extension Sample Code:
-$connectionInfo = array("UID" => "pilakag1", "pwd" => "Pilakag_1", "Database" => "pilakag1_db", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
-$serverName = "tcp:localhost01.database.windows.net,1433";
-$conn = sqlsrv_connect($serverName, $connectionInfo);
-	if ($conn->connect_error) 
-	{
-            die("Connection failed: " .$conn->connect_error);
-       	}
-
-	
+   
      	$sql1 = "SELECT demand FROM product WHERE product = '$name'";
 
        	$result4 = $conn->query($sql1);
