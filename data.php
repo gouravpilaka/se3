@@ -2,10 +2,13 @@
 
 function get_price($name)
 {
+       $servername = "tcp:localhost01.database.windows.net,1433";
+	$username = "pilakag1";
+	$password = "Pilakag_1";
+	$dbname = "pilakag1_db";
+
        
-	$connectionInfo = array("UID" => "pilakag1", "pwd" => "Pilakag_1", "Database" => "pilakag1_db", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
-	$serverName = "tcp:localhost01.database.windows.net,1433";
-	$conn = sqlsrv_connect($serverName, $connectionInfo);
+        $conn = new mysqli($servername, $username, $password, $dbname);
         
         if ($conn->connect_error) 
 	{
@@ -34,9 +37,13 @@ else {
 
 function get_avail($name)
 {
-       $connectionInfo = array("UID" => "pilakag1", "pwd" => "Pilakag_1", "Database" => "pilakag1_db", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
-	$serverName = "tcp:localhost01.database.windows.net,1433";
-	$conn = sqlsrv_connect($serverName, $connectionInfo);
+      $servername = "tcp:localhost01.database.windows.net,1433";
+	$username = "pilakag1";
+	$password = "Pilakag_1";
+	$dbname = "pilakag1_db";
+
+       
+        $conn = new mysqli($servername, $username, $password, $dbname);
         
         if ($conn->connect_error) 
 	{
@@ -64,10 +71,13 @@ else {
 
 function get_delv($name)
 {
-        
-	$connectionInfo = array("UID" => "pilakag1", "pwd" => "Pilakag_1", "Database" => "pilakag1_db", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
-	$serverName = "tcp:localhost01.database.windows.net,1433";
-	$conn = sqlsrv_connect($serverName, $connectionInfo);
+       $servername = "tcp:localhost01.database.windows.net,1433";
+	$username = "pilakag1";
+	$password = "Pilakag_1";
+	$dbname = "pilakag1_db";
+
+       
+        $conn = new mysqli($servername, $username, $password, $dbname);
         
         if ($conn->connect_error) 
 	{
@@ -96,9 +106,13 @@ else {
 function get_dema($name)
 {
         
-	$connectionInfo = array("UID" => "pilakag1", "pwd" => "Pilakag_1", "Database" => "pilakag1_db", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
-	$serverName = "tcp:localhost01.database.windows.net,1433";
-	$conn = sqlsrv_connect($serverName, $connectionInfo);
+	$servername = "tcp:localhost01.database.windows.net,1433";
+	$username = "pilakag1";
+	$password = "Pilakag_1";
+	$dbname = "pilakag1_db";
+
+       
+        $conn = new mysqli($servername, $username, $password, $dbname);
         
         if ($conn->connect_error) 
 	{
