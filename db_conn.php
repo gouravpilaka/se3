@@ -1,7 +1,7 @@
 <?php
 
 $servername = "localhost01.database.windows.net,1433";
-$username = "pilakag1@localhost01";
+$username = "pilakag1@";
 $password = "Pilakag_1";
 $db = "pilakag1_db";
 
