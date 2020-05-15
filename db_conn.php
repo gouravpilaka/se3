@@ -1,6 +1,6 @@
 <?php
 
-$servername = "tcp:localhost01.database.windows.net,1433";
+$servername = "localhost01.database.windows.net,1433";
 $username = "pilakag1@localhost01";
 $password = "Pilakag_1";
 $db = "pilakag1_db";
