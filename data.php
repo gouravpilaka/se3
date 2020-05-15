@@ -3,7 +3,7 @@
 
 function get_price($name)
 {
-	$servername = "tcp:localhost01.database.windows.net,1433";
+	$servername = "localhost01.database.windows.net";
 	$username = "pilakag1";
 	$password = "Pilakag_1";
 	$dbname = "pilakag1_db";
@@ -39,7 +39,7 @@ else {
 
 function get_avail($name)
 {
-	$servername = "tcp:localhost01.database.windows.net,1433";
+	$servername = "localhost01.database.windows.net";
 	$username = "pilakag1";
 	$password = "Pilakag_1";
 	$dbname = "pilakag1_db";
@@ -74,7 +74,7 @@ else {
 
 function get_delv($name)
 {
-   	$servername = "tcp:localhost01.database.windows.net,1433";
+   	$servername = "localhost01.database.windows.net";
 	$username = "pilakag1";
 	$password = "Pilakag_1";
 	$dbname = "pilakag1_db";
@@ -109,7 +109,7 @@ else {
 
 function get_dema($name)
 {
-	$servername = "tcp:localhost01.database.windows.net,1433";
+	$servername = "localhost01.database.windows.net";
 	$username = "pilakag1";
 	$password = "Pilakag_1";
 	$dbname = "pilakag1_db";
