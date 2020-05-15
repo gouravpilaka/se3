@@ -1,29 +1,16 @@
 <?php
-$host = 'tcp:localhost01.database.windows.net';
-$username = 'pilakag1';
-$password = 'Pilakag_1';
-$db_name = 'pilakag1_db';
-
-//Establishes the connection
-$conn = mysqli_init();
-mysqli_real_connect($conn, $host, $username, $password, $db_name, 1433);
-if (mysqli_connect_errno($conn)) {
-die('Failed to connect to MySQL: '.mysqli_connect_error());
+// PHP Data Objects(PDO) Sample Code:
+try {
+    $conn = new PDO("sqlsrv:server = tcp:localhost01.database.windows.net,1433; Database = pilakag1_db", "pilakag1", "Pilakag_1");
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+}
+catch (PDOException $e) {
+    print("Error connecting to SQL Server.");
+    die(print_r($e));
 }
 
-// Run the create table query
-if (mysqli_query($conn, '
-CREATE TABLE Prod (
-`Id` INT NOT NULL AUTO_INCREMENT ,
-`ProductName` VARCHAR(200) NOT NULL ,
-`Color` VARCHAR(50) NOT NULL ,
-`Price` DOUBLE NOT NULL ,
-PRIMARY KEY (`Id`)
-);
-')) {
-printf("Table created\n");
-}
-
-//Close the connection
-mysqli_close($conn);
+// SQL Server Extension Sample Code:
+$connectionInfo = array("UID" => "pilakag1", "pwd" => "Pilakag_1", "Database" => "pilakag1_db", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
+$serverName = "tcp:localhost01.database.windows.net,1433";
+$conn = sqlsrv_connect($serverName, $connectionInfo);
 ?>
