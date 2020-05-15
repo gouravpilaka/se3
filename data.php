@@ -11,7 +11,7 @@ function get_price($name)
        
         $conn = new mysqli($servername, $username, $password, $dbname);
         
-        i ($conn->connect_error) 
+        if ($conn->connect_error) 
 	{
             die("Connection failed: " .$conn->connect_error);
        	}
