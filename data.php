@@ -13,7 +13,7 @@ function get_price($name)
         
         if ($conn->connect_error) 
 	{
-            die("Connection failed: " .$conn->connect_error);
+            die("Connection faile: " .$conn->connect_error);
        	}
 
         
@@ -39,6 +39,18 @@ else {
 
 function get_avail($name)
 {
+	servername = "tcp:localhost01.database.windows.net,1433";
+	$username = "pilakag1";
+	$password = "Pilakag_1";
+	$dbname = "pilakag1_db";
+
+       
+        $conn = new mysqli($servername, $username, $password, $dbname);
+        
+        if ($conn->connect_error) 
+	{
+            die("Connection failed: " .$conn->connect_error);
+       	}
   
 
      	$sql1 = "SELECT avail FROM product WHERE product = '$name'";
@@ -62,7 +74,19 @@ else {
 
 function get_delv($name)
 {
-    
+    servername = "tcp:localhost01.database.windows.net,1433";
+	$username = "pilakag1";
+	$password = "Pilakag_1";
+	$dbname = "pilakag1_db";
+
+       
+        $conn = new mysqli($servername, $username, $password, $dbname);
+        
+        if ($conn->connect_error) 
+	{
+            die("Connection failed: " .$conn->connect_error);
+       	}
+  
 
      	$sql1 = "SELECT delv FROM product WHERE product = '$name'";
 
@@ -85,6 +109,19 @@ else {
 
 function get_dema($name)
 {
+	servername = "tcp:localhost01.database.windows.net,1433";
+	$username = "pilakag1";
+	$password = "Pilakag_1";
+	$dbname = "pilakag1_db";
+
+       
+        $conn = new mysqli($servername, $username, $password, $dbname);
+        
+        if ($conn->connect_error) 
+	{
+            die("Connection failed: " .$conn->connect_error);
+       	}
+  
    
      	$sql1 = "SELECT demand FROM product WHERE product = '$name'";
 
