@@ -3,7 +3,7 @@
 
 function get_price($name)
 {
-	$servername = "tcp:localhost01.database.windows.net";
+	$servername = "localhost01.database.windows.net";
 	$username = "pilakag1";
 	$password = "Pilakag_1";
 	$dbname = "pilakag1_db";
