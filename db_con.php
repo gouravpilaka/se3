@@ -1,5 +1,5 @@
 <?php
-$host = 'localhost01.database.windows.net';
+$host = 'tcp:localhost01.database.windows.net';
 $username = 'pilakag1@localhost01';
 $password = 'Pilakag_1';
 $db_name = 'pilakag1_db';
