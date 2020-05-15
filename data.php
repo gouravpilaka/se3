@@ -3,6 +3,19 @@
 
 function get_price($name)
 {
+	$servername = "tcp:localhost01.database.windows.net,1433";
+	$username = "pilakag1";
+	$password = "Pilakag_1";
+	$dbname = "pilakag1_db";
+
+       
+        $conn = new mysqli($servername, $username, $password, $dbname);
+        
+        if ($conn->connect_error) 
+	{
+            die("Connection failed: " .$conn->connect_error);
+       	}
+
         
        $sql = "SELECT price FROM product WHERE product = '$name'";
 
