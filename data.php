@@ -3,7 +3,7 @@
 
 function get_price($name)
 {
-	$servername = "localhost01.database.windows.net";
+	$servername = "tcp:localhost01.database.windows.net,1433";
 	$username = "pilakag1";
 	$password = "Pilakag_1";
 	$dbname = "pilakag1_db";
@@ -11,7 +11,7 @@ function get_price($name)
        
         $conn = new mysqli($servername, $username, $password, $dbname);
         
-        if ($conn->connect_error) 
+        i ($conn->connect_error) 
 	{
             die("Connection failed: " .$conn->connect_error);
        	}
@@ -39,7 +39,7 @@ else {
 
 function get_avail($name)
 {
-	$servername = "localhost01.database.windows.net";
+	$servername = "tcp:localhost01.database.windows.net,1433";
 	$username = "pilakag1";
 	$password = "Pilakag_1";
 	$dbname = "pilakag1_db";
@@ -74,7 +74,7 @@ else {
 
 function get_delv($name)
 {
-   	$servername = "localhost01.database.windows.net";
+   	$servername = "tcp:localhost01.database.windows.net,1433";
 	$username = "pilakag1";
 	$password = "Pilakag_1";
 	$dbname = "pilakag1_db";
@@ -109,7 +109,7 @@ else {
 
 function get_dema($name)
 {
-	$servername = "localhost01.database.windows.net";
+	$servername = "tcp:localhost01.database.windows.net,1433";
 	$username = "pilakag1";
 	$password = "Pilakag_1";
 	$dbname = "pilakag1_db";
