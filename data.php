@@ -12,7 +12,7 @@ function get_price($name)
         
         if ($conn->connect_error) 
 	{
-            die("Connection failed: " .$conn->connect_error);
+            die("Connection faied: " .$conn->connect_error);
        	}
 
 
