@@ -19,7 +19,7 @@ function get_price($name)
 
        $sql = "SELECT price FROM product WHERE product = '$name'";
 
-       $result = $conn->query($sql);
+       $result = $conn->query("$sql");
 	
 
          if ($result->num_rows > 0) {
@@ -55,7 +55,7 @@ function get_avail($name)
 
      	$sql1 = "SELECT avail FROM product WHERE product = '$name'";
 
-       	$result1 = $conn->query($sql1);
+       	$result1 = $conn->query("$sql1");
 
          if ($result1->num_rows > 0) {
              
@@ -88,7 +88,7 @@ function get_delv($name)
 
      	$sql1 = "SELECT delv FROM product WHERE product = '$name'";
 
-       	$result3 = $conn->query($sql1);
+       	$result3 = $conn->query("$sql1");
 
          if ($result3->num_rows > 0) {
              
@@ -122,7 +122,7 @@ function get_dema($name)
 
      	$sql1 = "SELECT demand FROM product WHERE product = '$name'";
 
-       	$result4 = $conn->query($sql1);
+       	$result4 = $conn->query("$sql1");
 
          if ($result4->num_rows > 0) {
              
