@@ -12,6 +12,7 @@ function get_price($name)
 	$stmt = $conn->query("$sql");
 	$row = $stmt->fetch();
 	$price = $row["price"];
+	echo "$row[0] $row[1] $row[2]";
 	$conn = NULL;
  	return $price;	
 	
