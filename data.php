@@ -2,40 +2,22 @@
 
 function get_price($name)
 {
-       
 	$host = "tcp:localhost01.database.windows.net,1433";
 	$user = "pilakag1@localhost01";
 	$pwd  = "Pilakag_1";
 	$db   = "pilakag1_db";
     	$conn = new PDO("sqlsrv:Server = $host; Database = $db", $user, $pwd);
     	$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        
-        if ($conn->connect_error) 
-	{
-            die("Connection faied: " .$conn->connect_error);
-       	}
-
-
-
-       $sql = "SELECT price FROM product WHERE product = '$name'";
-
-       $result = $conn->query("$sql");
 	
-
-         if ($result->num_rows > 0) {
-             
-             while($row = $result->fetch_assoc()) {
-                      $price = $row["price"];
-      }
-    } 
-else {
-                     $price = null;
-        }
-
-    $conn->close();
-
-    return $price;
+	$sql = ("SELECT price FROM product WHERE product = '$name'");
+	$stmt = $conn->query("$sql");
+	$row = $stmt->fetch();
+	$price = $row["price"];
+	$conn = NULL;
+ 	return $price;	
+	
 }
+
 
 function get_avail($name)
 {
@@ -47,29 +29,12 @@ function get_avail($name)
     	$conn = new PDO("sqlsrv:Server = $host; Database = $db", $user, $pwd);
     	$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         
-        if ($conn->connect_error) 
-	{
-            die("Connection failed: " .$conn->connect_error);
-       	}
-	
-
-     	$sql1 = "SELECT avail FROM product WHERE product = '$name'";
-
-       	$result1 = $conn->query("$sql1");
-
-         if ($result1->num_rows > 0) {
-             
-             while($row = $result1->fetch_assoc()) {
-                      $avail = $row["avail"];
-      }
-    } 
-else {
-                     $avail = null;
-        }
-
-    $conn->close();
-
-    return $avail;
+        $sql = ("SELECT avail FROM product WHERE product = '$name'");
+	$stmt = $conn->query("$sql");
+	$row = $stmt->fetch();
+	$avail = $row["avail"];
+	$conn = NULL;
+        return $avail;
 }
 
 function get_delv($name)
@@ -81,26 +46,12 @@ function get_delv($name)
     	$conn = new PDO("sqlsrv:Server = $host; Database = $db", $user, $pwd);
     	$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         
-        if ($conn->connect_error) 
-	{
-            die("Connection failed: " .$conn->connect_error);
-       	}
-
-     	$sql1 = "SELECT delv FROM product WHERE product = '$name'";
-
-       	$result3 = $conn->query("$sql1");
-
-         if ($result3->num_rows > 0) {
-             
-             while($row = $result3->fetch_assoc()) {
-                      $delv = $row["delv"];
-      }
-    } 
-else {
-                     $delv = null;
-        }
-
-    $conn->close();
+        $sql = ("SELECT delv FROM product WHERE product = '$name'");
+	$stmt = $conn->query("$sql");
+	$row = $stmt->fetch();
+	$delv = $row["delv"];
+	$conn = NULL;
+ 		
 
     return $delv;
 }
@@ -115,26 +66,11 @@ function get_dema($name)
     	$conn = new PDO("sqlsrv:Server = $host; Database = $db", $user, $pwd);
     	$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         
-        if ($conn->connect_error) 
-	{
-            die("Connection failed: " .$conn->connect_error);
-       	}
-
-     	$sql1 = "SELECT demand FROM product WHERE product = '$name'";
-
-       	$result4 = $conn->query("$sql1");
-
-         if ($result4->num_rows > 0) {
-             
-             while($row = $result4->fetch_assoc()) {
-                      $dema = $row["demand"];
-      }
-    } 
-else {
-                     $dema = null;
-        }
-
-    $conn->close();
+	$sql = ("SELECT demand FROM product WHERE product = '$name'");
+	$stmt = $conn->query("$sql");
+	$row = $stmt->fetch();
+	$dema = $row["demand"];
+	$conn = NULL;
 
     return $dema;
 }
