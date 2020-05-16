@@ -1,7 +1,5 @@
+<?php
 
-		<?php
-
-	try {
 	$host = "tcp:localhost01.database.windows.net,1433";
 	$user = "pilakag1@localhost01";
 	$pwd  = "Pilakag_1";
@@ -13,9 +11,6 @@
 	$row = $stmt->fetch();
 	echo "$row[0] $row[1] $row[2]";
 	$conn = NULL;
- 		}	
-	catch (Exception $e) {
-    	die(print_r($e));
-	}
-		?>
+ 		
+?>
 	 
