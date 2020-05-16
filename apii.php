@@ -1,6 +1,6 @@
 <?php
 header("Content-Type:application");
-require "data.php";
+require "dataa.php";
  
 if(!empty($_GET['name']))
 {
