@@ -14,5 +14,7 @@ function get_price($name)
 	$price = $row["price"];
 	$conn = NULL;
  	return $price;	
+	
+}
 ?>
 	 
