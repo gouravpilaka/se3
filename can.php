@@ -1,11 +1,4 @@
-<html>
-<head>
-<meta charset="utf-8"/>
-<title></title>
-<script></script>
-</head>
-<body>
-	<h1>
+
 		<?php
 
 	try {
@@ -25,6 +18,4 @@
     	die(print_r($e));
 	}
 		?>
-	   </h1>
-	</body>
-</html>
+	 
