@@ -1,5 +1,7 @@
 <?php
 
+function get_price($name)
+{
 	$host = "tcp:localhost01.database.windows.net,1433";
 	$user = "pilakag1@localhost01";
 	$pwd  = "Pilakag_1";
@@ -10,7 +12,8 @@
 	$stmt = $conn->query("$sql");
 	$row = $stmt->fetch();
 	echo "$row[0] $row[1] $row[2]";
+	$price = $row["price"];
 	$conn = NULL;
- 		
+ 	return $price;	
 ?>
 	 
