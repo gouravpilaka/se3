@@ -10,7 +10,7 @@ function get_price($name)
     	$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 	$sql = ("SELECT price FROM product WHERE product = '$name'");
 	$stmt = $conn->query("$sql");
-	$row = $stmt->ftch();
+	$row = $stmt->fetch();
 	$price = $row["price"];
 	$conn = NULL;
  	return $price;	
