@@ -3,14 +3,12 @@
 function get_price($name)
 {
        
-	 
-	$servername = "tcp:localhost01.database.windows.net,1433";
-	$username = "pilakag1@localhost01";
-	$password = "Pilakag_1";
-	$dbname = "pilakag1@localhost01_db";
-
-       
-        $conn = new mysqli($servername, $username, $password, $dbname);
+	$host = "tcp:localhost01.database.windows.net,1433";
+	$user = "pilakag1@localhost01";
+	$pwd  = "Pilakag_1";
+	$db   = "pilakag1_db";
+    	$conn = new PDO("sqlsrv:Server = $host; Database = $db", $user, $pwd);
+    	$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         
         if ($conn->connect_error) 
 	{
@@ -42,13 +40,12 @@ else {
 function get_avail($name)
 {
         
-	$servername = "tcp:localhost01.database.windows.net,1433";
-	$username = "pilakag1@localhost01";
-	$password = "Pilakag_1";
-	$dbname = "pilakag1@localhost01_db";
-
-       
-        $conn = new mysqli($servername, $username, $password, $dbname);
+	$host = "tcp:localhost01.database.windows.net,1433";
+	$user = "pilakag1@localhost01";
+	$pwd  = "Pilakag_1";
+	$db   = "pilakag1_db";
+    	$conn = new PDO("sqlsrv:Server = $host; Database = $db", $user, $pwd);
+    	$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         
         if ($conn->connect_error) 
 	{
@@ -77,14 +74,12 @@ else {
 
 function get_delv($name)
 {
-        
-	$servername = "tcp:localhost01.database.windows.net,1433";
-	$username = "pilakag1@localhost01";
-	$password = "Pilakag_1";
-	$dbname = "pilakag1@localhost01_db";
-
-       
-        $conn = new mysqli($servername, $username, $password, $dbname);
+        $host = "tcp:localhost01.database.windows.net,1433";
+	$user = "pilakag1@localhost01";
+	$pwd  = "Pilakag_1";
+	$db   = "pilakag1_db";
+    	$conn = new PDO("sqlsrv:Server = $host; Database = $db", $user, $pwd);
+    	$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         
         if ($conn->connect_error) 
 	{
@@ -113,13 +108,12 @@ else {
 function get_dema($name)
 {
         
-	$servername = "tcp:localhost01.database.windows.net,1433";
-	$username = "pilakag1@localhost01";
-	$password = "Pilakag_1";
-	$dbname = "pilakag1@localhost01_db";
-
-       
-        $conn = new mysqli($servername, $username, $password, $dbname);
+	$host = "tcp:localhost01.database.windows.net,1433";
+	$user = "pilakag1@localhost01";
+	$pwd  = "Pilakag_1";
+	$db   = "pilakag1_db";
+    	$conn = new PDO("sqlsrv:Server = $host; Database = $db", $user, $pwd);
+    	$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         
         if ($conn->connect_error) 
 	{
