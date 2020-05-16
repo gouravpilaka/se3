@@ -1,6 +1,6 @@
 <?php
 header("Content-Type:application");
-require "can.php";
+require "data.php";
  
 if(!empty($_GET['name']))
 {
